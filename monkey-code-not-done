@@ -1,0 +1,74 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Title:      IP19_Program2.cpp
+Author:     Max T.
+Navigators: Tristan Mader, Steven T.
+Date:       3/12/19
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+#include <iostream>
+using namespace std;
+
+//constants for days and monkeys
+const int mkys = 3;
+const int days = 7;
+
+int main()
+{
+	//2 array
+	int food[mkys][days];
+	int pounds, least, most, sum = 0;
+
+	// user input for monkey eats
+	cout << "You will need to enter 3 sets of 7 integers, one for each monkey.\n";
+	for (int row = 0; row < mkys; row++) //  row count to monkey (mkys = 3;)
+	{
+		for (int col = 0; col < days; col++) //column count to days (days = 7;)
+		{
+
+				cout << "*Monkey #" << (row + 1) << "*\n";        //format: monkey #1
+				cout << "Day " << (col + 1) << ": ";            //        day 1: xx
+				cin  >> pounds;
+			food[row][col] = pounds;
+
+			sum += pounds; // adds pounds to counter for total eaten
+		}
+		cout << endl; //make space after inputs
+	}
+
+	// for least and most eaten
+	least = most = food[0][0];  // set values to -
+	for (int row = 0; row < mkys; row++)
+	{
+		for (int col = 0; col < days; col++)
+		{
+			if (food[row][col] < least)
+			{ 
+				least = food[row][col];
+			}
+			if (food[row][col] > most)
+			{ 
+				most = food[row][col];
+			}
+		}
+    
+	}
+	
+	
+	cout << food[1];
+	cout << food[2];
+	cout << food[3];
+	    
+
+	
+        //output report
+	cout << "              Monkey Report\n"
+		 << "                                             \n";
+	cout << "Least eaten.. \n";
+	cout << least << " pounds by monkey #" << food[0] <<"\n\n";
+	
+	cout << "Most eaten.. \n"; 
+	cout << most << " pounds by monkey #" << food[0] <<"\n\n";
+	
+	cout << "EXTRA CHALLENGE: total eaten: " << sum << " pounds.";
+
+	return 0;
+}
