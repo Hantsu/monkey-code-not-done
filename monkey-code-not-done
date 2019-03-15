@@ -24,8 +24,7 @@ int main()
 		for (int col = 0; col < days; col++) //column count to days (days = 7;)
 		{
 
-				cout << "*Monkey #" << (row + 1) << "*\n";        //format: monkey #1
-				cout << "Day " << (col + 1) << ": ";            //        day 1: xx
+				cout << "*Monkey #" << (row + 1) << "," << " Day " << (col + 1) << ": ";
 				cin  >> pounds;
 			food[row][col] = pounds;
 
@@ -52,21 +51,16 @@ int main()
     
 	}
 	
-	
-	cout << food[1];
-	cout << food[2];
-	cout << food[3];
-	    
-
+	cout << endl;
 	
         //output report
 	cout << "              Monkey Report\n"
-		 << "                                             \n";
+		 << "           ~~~~~~~~~~~~~~~~~~~~   \n";
 	cout << "Least eaten.. \n";
-	cout << least << " pounds by monkey #" << food[0] <<"\n\n";
+	cout << least << " pounds." << "\n\n";
 	
 	cout << "Most eaten.. \n"; 
-	cout << most << " pounds by monkey #" << food[0] <<"\n\n";
+	cout << most << " pounds." <<"\n\n";
 	
 	cout << "EXTRA CHALLENGE: total eaten: " << sum << " pounds.";
 
